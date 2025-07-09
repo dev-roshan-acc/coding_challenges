@@ -18,9 +18,12 @@
 
 
 def two_sum(nums,target):
-    
-
+    hashTable = {} # value => key
+    for i,num in enumerate(nums):
+        diff = target  - num
+        if diff in hashTable:
+            return [hashTable[diff],i]
+        hashTable[num] = i
 nums = [2,7,11,15]
 target = 9
-
-two_sum(nums,target)
+print (two_sum(nums,target))
