@@ -18,14 +18,25 @@
 
 
 def two_sum(nums,target):
-    hashTable = {} # value => key
-    for i,num in enumerate(nums):
-        diff = target  - num
-        if diff in hashTable:
-            return [hashTable[diff],i]
-        hashTable[num] = i
+    # with two pointer
+    l,r = 0, len(nums)-1
+    while l<r:
+        c = nums[l] + nums[r]
+        if target<c: r-=1
+        elif target>c: l+=1
+        else: return [l,r]
+    
+    # with hashtable
+    # hashTable = {} # value => key
+    # for i,num in enumerate(nums):
+    #     diff = target  - num
+    #     if diff in hashTable:
+    #         return [hashTable[diff],i]
+    #     hashTable[num] = i
 nums = [2,7,11,15]
 target = 9
 print (two_sum(nums,target))
 
- 
+nums = [1,2,3,4]
+target = 6
+print (two_sum(nums,target))
