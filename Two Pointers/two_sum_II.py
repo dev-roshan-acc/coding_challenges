@@ -39,6 +39,8 @@ def twoSum(nums: List[int], target: int) -> List[int]:
         elif target>current:
             left+=1
         else: return [left+1,right+1]
+        
+
 nums, target = [1, 2, 3, 4], 3  # example 1 output = [1, 2]
 print(twoSum(nums, target))
 
